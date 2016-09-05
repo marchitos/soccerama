@@ -1,0 +1,2 @@
+# soccerama
+Soccerama API
