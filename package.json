@@ -1,17 +1,19 @@
 {
   "name": "soccerama",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "Soccerama API",
   "main": "dist/index.js",
   "scripts": {
-    "watch:test" : "npm t -- -w",
+    "commit": "git-cz",
+    "watch:test": "npm t -- -w",
     "test": "mocha src/index.test.js --compilers js:babel-register",
     "prebuild": "rimraf dist",
-    "build": "babel --out-dir dist --ignore *.test.js src"
+    "build": "babel --out-dir dist --ignore *.test.js src",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marchitos/soccerama.git"
+    "url": "https://github.com/marchitos/soccerama.git"
   },
   "keywords": [
     "soccerama",
@@ -33,9 +35,15 @@
     "babel-preset-stage-2": "6.13.0",
     "babel-register": "6.14.0",
     "chai": "3.5.0",
+    "commitizen": "2.8.6",
+    "cz-conventional-changelog": "1.2.0",
     "mocha": "3.0.2",
     "nyc": "8.1.0",
-    "rimraf": "2.5.4"
+    "rimraf": "2.5.4",
+    "semantic-release": "^4.3.5"
+  },
+  "czConfig":{
+    "path": "node_modules/cz-conventional-changelog"
   },
   "babel": {
     "presets": [
