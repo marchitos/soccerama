@@ -13,4 +13,8 @@ describe('Soccerama', function(){
     expect(soccerama.token).to.be.equal('jkldjgklfjgfl');
   });
 
+  it('must have a getCountries method', () => {
+    expect(soccerama.getCountries).to.exist;
+  })
+
 });

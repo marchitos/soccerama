@@ -6,4 +6,8 @@ export class Soccerama{
     this.token = tokenId;
   }
 
+  getCountries(){
+    return [];
+  }
+
 }
