@@ -5,10 +5,14 @@
   "main": "dist/index.js",
   "scripts": {
     "commit": "git-cz",
+    "check-coverage": "nyc check-coverage",
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
     "watch:test": "npm t -- -w",
     "test": "mocha src/index.test.js --compilers js:babel-register",
+    "cover": "nyc npm t",
+    "cover:html": "nyc --reporter=lcov npm t",
     "prebuild": "rimraf dist",
-    "build": "babel --out-dir dist --ignore *.test.js src",
+    "build": "babel --out-dir dist --ignore *.test.js,apitoken.js src",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -35,6 +39,7 @@
     "babel-preset-stage-2": "6.13.0",
     "babel-register": "6.14.0",
     "chai": "3.5.0",
+    "codecov.io": "0.1.6",
     "commitizen": "2.8.6",
     "cz-conventional-changelog": "1.2.0",
     "ghooks": "1.3.2",
@@ -43,12 +48,12 @@
     "rimraf": "2.5.4",
     "semantic-release": "^4.3.5"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
-  },
   "config": {
-    "ghooks" : {
-      "pre-commit": "npm run test"
+    "ghooks": {
+      "pre-commit": "npm run cover && npm run check-coverage"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
     }
   },
   "babel": {
