@@ -14,6 +14,7 @@ npm install soccerama
 # import
 ## ES6
 ```js
+import { Soccerama } from 'soccerama';
 const soccerama = new Soccerama(__YOUR_API_TOKEN__);
 ```
 ## CommonJS
