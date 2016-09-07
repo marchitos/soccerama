@@ -1,10 +1,10 @@
 import { Soccerama } from './index';
 import { expect } from 'chai';
-import { apiToken } from './apitoken';
 
 describe('Soccerama', function(){
 
   let soccerama;
+  let apiToken = "jhfksjfhsjfhkjshfdjk";
 
   beforeEach( () => {
     soccerama = new Soccerama(apiToken);
@@ -34,13 +34,20 @@ describe('Soccerama', function(){
     expect(soccerama.get).to.exist;
   });
 
-  it('should return countries when countries endpoint is called', () => {
-    return soccerama.get('countries').then( data => {
-      expect(data).to.have.property('data');
-      expect(data.data).to.be.instanceof(Array);
-      expect(data.data[0]).to.have.property('id');
-      expect(data.data[0]).to.not.have.property('competitions');
+  it('must have a _get method', () => {
+    expect(soccerama._get).to.exist;
+    return soccerama._get('https://example.com',true).then( data => {
+
     });
   });
+
+  it('should fail if not token', () => {
+    soccerama.get('countries',{competitions:true}).then( data => {
+
+    }, err => {
+      console.log(err);
+    });
+  })
+
 
 });

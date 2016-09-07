@@ -9,7 +9,7 @@ export class Soccerama{
     this.token = tokenId;
   }
 
-  _get(url){
+  _get(url,plain){
     return new Promise((resolve, reject) => {
       const request = https.get(url, (response) => {
         // handle http errors
@@ -21,7 +21,7 @@ export class Soccerama{
         // on every content chunk, push it to the data array
         response.on('data', (chunk) => body.push(chunk));
         // we are done, resolve promise with those joined chunks
-        response.on('end', () => resolve(JSON.parse(body.join(''))));
+        response.on('end', () => resolve( plain ? body.join('') : JSON.parse(body.join('')) ));
       });
       // handle connection errors of the request
       request.on('error', (err) => reject(err))
@@ -30,7 +30,6 @@ export class Soccerama{
 
   get(endpoint, params){
     let url = this.composeUrl(endpoint,params);
-
     return this._get(url);
   }
 

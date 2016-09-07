@@ -14,12 +14,12 @@ npm install soccerama
 # import
 ## ES6
 ```js
-const soccerama = new Soccerama(__YOUR_API_TOKEN__)
+const soccerama = new Soccerama(__YOUR_API_TOKEN__);
 ```
 ## CommonJS
 ```js
 var Soccerama = require('soccerama').Soccerama;
-var soccerama = new Soccerama(__YOUR_API_TOKEN__)
+var soccerama = new Soccerama(__YOUR_API_TOKEN__);
 ```
 # usage
 ```js

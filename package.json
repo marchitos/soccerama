@@ -12,7 +12,7 @@
     "cover": "nyc npm t",
     "cover:html": "nyc --reporter=lcov npm t",
     "prebuild": "rimraf dist",
-    "build": "babel --out-dir dist --ignore *.test.js,apitoken.js src",
+    "build": "babel --out-dir dist --ignore *.test.js src",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
