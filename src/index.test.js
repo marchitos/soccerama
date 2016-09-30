@@ -14,8 +14,13 @@ describe('Soccerama', function(){
       expect(soccerama.token).to.be.equal(apiToken);
   });
 
-  it('must have a baseUrl field', () => {
+  it('must have a baseUrl field for v1.1', () => {
       expect(soccerama.baseUrl).to.be.equal('https://api.soccerama.pro/v1.1/');
+  });
+
+  it('must have a baseUrl field for v1.2', () => {
+    soccerama = new Soccerama(apiToken, 'v1.2');
+    expect(soccerama.baseUrl).to.be.equal('https://api.soccerama.pro/v1.2/');
   });
 
   it('must have a composeUrl method', () => {
@@ -40,14 +45,6 @@ describe('Soccerama', function(){
 
     });
   });
-
-  it('should fail if not token', () => {
-    soccerama.get('countries',{competitions:true}).then( data => {
-
-    }, err => {
-      console.log(err);
-    });
-  })
 
 
 });

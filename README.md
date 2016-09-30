@@ -1,5 +1,5 @@
 # soccerama
-## Soccerama API for v1.1
+## Soccerama API for v1.1 and v1.2
 
 [![travis build](https://img.shields.io/travis/marchitos/soccerama.svg?style=flat.square)](https://travis-ci.org/marchitos/soccerama)
 ![codecov coverage](https://img.shields.io/codecov/c/github/marchitos/soccerama.svg?style=flat.square)
@@ -15,15 +15,17 @@ npm install soccerama
 ## ES6
 ```js
 import { Soccerama } from 'soccerama';
-const soccerama = new Soccerama(__YOUR_API_TOKEN__);
+const soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v1.2');
 ```
 ## CommonJS
 ```js
 var Soccerama = require('soccerama').Soccerama;
-var soccerama = new Soccerama(__YOUR_API_TOKEN__);
+var soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v1.2');
 ```
 # usage
 ```js
+var soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v1.2'); // if second param is omitted api v1.1 will be used
+
 soccerama.get(endpoint,params).then( function(data){
     console.log(data);
 });
