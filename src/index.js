@@ -3,12 +3,13 @@ import https from 'https';
 export class Soccerama{
 
   token = null;
-  version = 'v1.1';
+  version = 'v1.2';
   baseUrl = "https://api.soccerama.pro/";
 
   constructor(tokenId, vId){
     this.token = tokenId;
     if (vId) this.version = vId;
+    if (vId == 'v2.0') this.baseUrl = "https://soccer.sportmonks.com/api/";
     this.baseUrl = this.baseUrl + this.version + "/";
   }
 

@@ -1,5 +1,5 @@
 # soccerama
-## Soccerama API for v1.1 and v1.2
+## Soccerama API for v1.1, v1.2 and v2.0
 
 [![travis build](https://img.shields.io/travis/marchitos/soccerama.svg?style=flat.square)](https://travis-ci.org/marchitos/soccerama)
 ![codecov coverage](https://img.shields.io/codecov/c/github/marchitos/soccerama.svg?style=flat.square)
@@ -15,23 +15,23 @@ npm install soccerama
 ## ES6
 ```js
 import { Soccerama } from 'soccerama';
-const soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v1.2');
+const soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v2.0');
 ```
 ## CommonJS
 ```js
 var Soccerama = require('soccerama').Soccerama;
-var soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v1.2');
+var soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v2.0');
 ```
 # usage
 ```js
-var soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v1.2'); // if second param is omitted api v1.1 will be used
+var soccerama = new Soccerama(__YOUR_API_TOKEN__, 'v2.0'); // if second param is omitted api v1.2 will be used
 
 soccerama.get(endpoint,params).then( function(data){
     console.log(data);
 });
 ```
 ## endpoint
-you can get the endpoint from the [official soccerama documentation](https://soccerama.pro/docs/1.1)
+you can get the endpoint from the [official soccerama documentation](https://www.sportmonks.com/sports/soccer#documentation)
 omitting the base url and the parameters (that are set with the params field)
 
 ```js
