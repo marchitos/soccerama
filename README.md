@@ -1,5 +1,5 @@
-# soccerama
-## Soccerama API for v1.1, v1.2 and v2.0
+# Soccerama new Sportmonks
+## Sportmonks API for v1.1, v1.2 and v2.0
 
 [![travis build](https://img.shields.io/travis/marchitos/soccerama.svg?style=flat.square)](https://travis-ci.org/marchitos/soccerama)
 ![codecov coverage](https://img.shields.io/codecov/c/github/marchitos/soccerama.svg?style=flat.square)
