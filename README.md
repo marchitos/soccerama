@@ -40,6 +40,7 @@ soccerama.get('countries').then( function(data){
 });
 ```
 
+
 ## params
 if you need to specify parameters you can set the params field as follow
 ```js
