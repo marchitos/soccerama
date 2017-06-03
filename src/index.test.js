@@ -14,13 +14,13 @@ describe('Soccerama', function(){
       expect(soccerama.token).to.be.equal(apiToken);
   });
 
-  it('must have a baseUrl field for v1.1', () => {
-      expect(soccerama.baseUrl).to.be.equal('https://api.soccerama.pro/v1.1/');
+  it('must have a baseUrl field for v1.2', () => {
+      expect(soccerama.baseUrl).to.be.equal('https://api.soccerama.pro/v1.2/');
   });
 
-  it('must have a baseUrl field for v1.2', () => {
-    soccerama = new Soccerama(apiToken, 'v1.2');
-    expect(soccerama.baseUrl).to.be.equal('https://api.soccerama.pro/v1.2/');
+  it('must have a baseUrl field for v2.0', () => {
+    soccerama = new Soccerama(apiToken, 'v2.0');
+    expect(soccerama.baseUrl).to.be.equal('https://soccer.sportmonks.com/api/v2.0/');
   });
 
   it('must have a composeUrl method', () => {

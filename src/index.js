@@ -3,12 +3,13 @@ import https from 'https';
 export class Soccerama{
 
   token = null;
-  version = 'v1.1';
+  version = 'v1.2';
   baseUrl = "https://api.soccerama.pro/";
 
   constructor(tokenId, vId){
     this.token = tokenId;
     if (vId) this.version = vId;
+    if (vId == 'v2.0') this.baseUrl = "https://soccer.sportmonks.com/api/";
     this.baseUrl = this.baseUrl + this.version + "/";
   }
 
@@ -49,13 +50,24 @@ export class Soccerama{
     }
     newEndpoint += "?api_token=" + this.token;
 
-    if (params && Object.keys(params).length > 0){
-      let plist = [];
-      let pkeys = Object.keys(params);
-      for (let p in pkeys) {
-        if (params[pkeys[p]]) plist.push(pkeys[p]);
-      }
-      if (plist.length > 0) newEndpoint += "&include="+plist.join(',');
+    if (params && Object.keys(params).length > 0) {
+        var plist = [];
+        var page;
+        var pkeys = Object.keys(params);
+        var pvalues = Object.values(params);
+        for (var p in pkeys) {
+          
+          if(pkeys[p] == 'page'){
+            page="&page="+pvalues[p];
+          }
+          else{
+            if (params[pkeys[p]]) plist.push(pkeys[p]);
+          }
+        }
+        
+        if (plist.length > 0) newEndpoint += "&include=" + plist.join(',');
+        if (typeof page != "undefined") newEndpoint += page;
+        console.log(newEndpoint);
     }
     return newEndpoint;
   }
