@@ -33,6 +33,7 @@ describe('Soccerama', function(){
     let params2 = null;
     let res2 = soccerama.baseUrl + "countries?api_token="+apiToken;
     expect(soccerama.composeUrl(endpoint2,params2)).to.be.equal(res2);
+
   });
 
   it('must have a get method', () => {

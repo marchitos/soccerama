@@ -1,6 +1,6 @@
 {
   "name": "soccerama",
-  "version": "0.0.0-semantically-released",
+  "version": "3.0.0-semantically-released",
   "description": "Soccerama API",
   "main": "dist/index.js",
   "scripts": {
