@@ -1,6 +1,6 @@
 {
   "name": "soccerama",
-  "version": "3.0.0-semantically-released",
+  "version": "0.0.0-semantically-released",
   "description": "Soccerama API",
   "main": "dist/index.js",
   "scripts": {
@@ -42,16 +42,13 @@
     "codecov": "1.0.1",
     "commitizen": "2.8.6",
     "cz-conventional-changelog": "1.2.0",
-    "ghooks": "1.3.2",
+    "husky": "0.13.4",
     "mocha": "3.0.2",
     "nyc": "8.1.0",
     "rimraf": "2.5.4",
     "semantic-release": "^4.3.5"
   },
   "config": {
-    "ghooks": {
-      "pre-commit": "npm run cover && npm run check-coverage"
-    },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
